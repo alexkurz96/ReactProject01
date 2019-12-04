@@ -11,7 +11,7 @@ import { routerMiddleware, ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 
 import createRootReducer from 'reducers';
-import Layout from 'containers/layout';
+import routes from 'routes';
 //import Phones from 'containers/phones';
 
 const history = createBrowserHistory();
@@ -24,7 +24,7 @@ const store = createStore(createRootReducer(history), composeWithDevTools(
 ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
-			<Layout />
+			{routes}
 		</ConnectedRouter>
 	</Provider>,
 	document.getElementById('root')
